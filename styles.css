@@ -1,0 +1,78 @@
+header, main, footer {
+	border: 1px solid black;
+}
+
+a:link {
+	color: #000;
+	text-decoration: none;
+	cursor: default;
+}
+
+a:visited {
+	color: #000;
+	text-decoration: none;
+	cursor: default;
+}
+
+a:hover {
+	color: #000;
+	text-decoration: underline;
+	cursor: default;
+}
+
+a:active {
+	color: #000;
+	text-decoration: none;
+	cursor: default;
+}
+
+header {
+	display: inline-flex;
+	align-items: center;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	border-bottom: 1px solid gray;
+}
+
+#home, #more {
+	margin: 5px;
+}
+
+#home {
+	margin-left: 15px;
+	margin-right: auto;
+}
+
+#more {
+	margin-right: 15px;
+}
+
+footer {
+	position: fixed;
+	display: inline-flex;
+	align-items: center;
+	bottom: 0px;
+	width: 100%;
+	height: 30px;
+	background-color: white;
+	border-top: 1px solid gray;
+}
+
+#linkedin, #github, #copywrite, #contactMe {
+	margin: 5px;
+}
+
+#linkedin {
+	margin-left: 15px;
+}
+
+#github {
+	margin-right: auto;
+}
+
+#contactMe {
+	margin-right: 15px;
+}
