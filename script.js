@@ -1,58 +1,89 @@
 
 
-
-
-
-
-
-// This is a module
-(function() {
+// Game board module.
+var gameBoard = (function() {
 	'use strict';
-	// Code here
-})();
+	const board = ["", "", "", "", "", "", "", "", ""];
+	const cells = Array.from(document.querySelectorAll(".cell"));
+	let winner = false;
+	let player1Score = 0;
+	let player2Score = 0;
 
-// This is an exported module.
-var myModule = (function() {
-	'use strict';
+	// Establish an event listener on the cells that will set the clicked
+	// cell to X or O alternatingly.
 
-})();
 
-// This is an exported module with methods.
-var myModule = (function() {
-	'use strict';
-	// Code here
+	function setCell(cellID, value) {
+		cells.forEach(cell => {
+			cell.addEventListener('click', () => {
+				cell.textContent = "X"
+			});
+		});
 
-	// Becuase it's curly brackets it's an object
-	return {
-		publicMethod: function() {
-			console.log('Hello World!');
+		board[cellID] = value;
+		checkForWin();
+	}
+
+
+	setCell(0, "X");
+	setCell(1, "X");
+	setCell(2, "O");
+	
+
+	function checkForWin() {
+		function compareCells(cell1, cell2, cell3) {
+			if (cell1 == "X" || cell1 == "O") {
+				if (cell1 == cell2 && cell2 == cell3) {
+					console.log("declareWinner activated");
+					declareWinner(cell1);
+					return true;
+				}
+			}
 		}
+		compareCells(board[0], board[1], board[2]);
+		compareCells(board[3], board[4], board[5]);
+		compareCells(board[6], board[7], board[8]);
+		compareCells(board[0], board[3], board[6]);
+		compareCells(board[1], board[4], board[7]);
+		compareCells(board[2], board[5], board[8]);
+		compareCells(board[0], board[4], board[8]);
+		compareCells(board[2], board[4], board[6]);
+	}
+
+
+	function declareWinner(roundWinner) {
+		const xScore = document.querySelector("#xScore");
+		const oScore = document.querySelector("#oScore");
+		const outcome = document.querySelector("#gameOutcome");
+		// Write to DOM winner Wins!
+		if (roundWinner == "X") {
+			winner = "Player 1";
+			outcome.textContent = `Player 1 wins!`;
+			player1Score++;
+		} else if (roundWinner == "O") {
+			winner = "Player 0";
+			outcome.textContent = `Player 2 wins!`;
+			player2Score++;
+		} else {
+			winner = "Tie"
+			outcome.textContent = "It was a tie!";
+		}
+		// Clear X's and O's from Board array and DOM
+		cells.forEach(cell => cell.textContent = "");
+		for (let i in board) board[i] = "";
+	}
+
+
+	return {
+		board: board,
+		setCell: setCell,
+		winner: winner,
+		checkForWin: checkForWin
 	}
 })();
-myModule.publicMethod(); // Outputs Hello World!
 
 
-// The Revealing Module Pattern
-var myModule = (function() {
-	'use strict';
-  
-	var _privateProperty = 'Hello World';
-	var publicProperty = 'I am a public property';
-  
-	function _privateMethod() {
-	  console.log(_privateProperty);
-	}
-  
-	function publicMethod() {
-	  _privateMethod();
-	}
-  
-	return {
-	  publicMethod: publicMethod,
-	  publicProperty: publicProperty
-	};
-  })();
-
+/*
   //DOM Manipulation with a Module
   const Formatter = (function(doc) {
 	const log = (message) => console.log(`[${Date.now()}] Logger: ${message}`);
@@ -75,3 +106,4 @@ var myModule = (function() {
   })(document);
   
   Formatter.writeToDOM("#target", "Hi there");
+  */
