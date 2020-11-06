@@ -9,31 +9,37 @@
 	<body>
 		<header>
 			<div id="home"><a href="">Tic-Tac-Toe</a></div>
-			<div id="more"><a href="ethanzitting.com">More by Ethan</a></div>
+			<div id="more"><a href="ethanzitting.com" target="_blank">More by Ethan</a></div>
 		</header>
 		<main>
-			
-			<div id="boardContainer">
-				<div class="cell" id="cell0">0</div>
-				<div class="cell" id="cell1">1</div>
-				<div class="cell" id="cell2">2</div>
-				<div class="cell" id="cell3">3</div>
-				<div class="cell" id="cell4">4</div>
-				<div class="cell" id="cell5">5</div>
-				<div class="cell" id="cell6">6</div>
-				<div class="cell" id="cell7">7</div>
-				<div class="cell" id="cell8">8</div>
+			<div id="titleBar">
+				<div id="xTitle">Player One: X's</div>
+				<div> VS</div>
+				<div id="oTitle">Player Two: O's</div>
 			</div>
+			<div id="turnDisplay">Player One's Turn</div>
+			<div id="boardContainer">
+				<div class="cell" id="cell0" data-index="0"></div>
+				<div class="cell" id="cell1" data-index="1"></div>
+				<div class="cell" id="cell2" data-index="2"></div>
+				<div class="cell" id="cell3" data-index="3"></div>
+				<div class="cell" id="cell4" data-index="4"></div>
+				<div class="cell" id="cell5" data-index="5"></div>
+				<div class="cell" id="cell6" data-index="6"></div>
+				<div class="cell" id="cell7" data-index="7"></div>
+				<div class="cell" id="cell8" data-index="8"></div>
+			</div>
+			<div id="resetBtn">New Game</div>
 			<div id="resultsContainer">
-				<div id="xScore">X Score</div>
-				<div id="gameOutcome">Game Outcome</div>
-				<div id="oScore">O Score</div>
+				<div id="xScore">Player One Score:  </div>
+				<div id="gameOutcome">This Game Outcome</div>
+				<div id="oScore">Player Two Score:  </div>
 			</div>
 			
 		</main>
 		<footer>
-			<div id="linkedin"><a href="https://www.linkedin.com/in/ethanzitting/">LinkedIn</a></div>
-			<div id="github"><a href="https://github.com/ethanzitting">GitHub</a></div>
+			<div id="linkedin"><a href="https://www.linkedin.com/in/ethanzitting/" target="_blank">LinkedIn</a></div>
+			<div id="github"><a href="https://github.com/ethanzitting" target="_blank">GitHub</a></div>
 			<div id="copywrite">© 2020</div>
 		</footer>
 	</body>

@@ -1,7 +1,3 @@
-header, main, footer {
-	border: 1px solid black;
-}
-
 a:link {
 	color: #000;
 	text-decoration: none;
@@ -48,15 +44,31 @@ header {
 
 main {
 	margin-top: 100px;
-	width: 100%;
 }
 
+#titleBar {
+	display: inline-flex;
+	width: 100%;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#turnDisplay {
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
 
 #boardContainer {
 	border: 1px solid black;
 	background-color: lightblue;
 	height: 120px;
 	width: 120px;
+	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
 	display: grid;
@@ -79,6 +91,40 @@ main {
 
 .cell:hover {
 	cursor: pointer;
+}
+
+#resetBtn {
+	border: 1px solid black;
+	border-radius: 2px;
+	background-color: lightgrey;
+	width: 80px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+}
+
+#resetBtn:hover {
+	cursor: pointer;
+}
+
+#resultsContainer {
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	align-content: space-around;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#xScore, #xTitle {
+	margin-left: 50px;
+	margin-right: auto;
+}
+
+#oScore, #oTitle {
+	margin-right: 50px;
+	margin-left: auto;
 }
 
 footer {
