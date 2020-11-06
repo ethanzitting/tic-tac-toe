@@ -112,6 +112,8 @@ var gameBoard = (function() {
 		cells.forEach(cell => cell.textContent = "");
 		for (let i in board) board[i] = "";
 		winner = false;
+		outcome.textContent = "";
+		turnDisplay.textContent = "Player One's Turn";
 	});
 
 
